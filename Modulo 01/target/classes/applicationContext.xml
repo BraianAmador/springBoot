@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="miPrimerBean"
+          class="com.educacionit.ejemplosbean.uno.PrimerBean">
+        <property name="saludo">
+            <value>Hola, como estas?</value>
+        </property>
+    </bean>
+
+    <bean id="persona"
+          class="com.educacionit.ejemplosbean.dos.Persona">
+        <constructor-arg>
+            <value>1</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>Juan</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>Perez</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="persona2"
+          class="com.educacionit.ejemplosbean.dos.Persona">
+        <constructor-arg index="1" type="java.lang.String" value="Roberto"></constructor-arg>
+        <constructor-arg index="0" type="java.lang.Integer" value="2"></constructor-arg>
+        <constructor-arg index="2" type="java.lang.String" value="Perez"></constructor-arg>
+    </bean>
+
+    <bean id="personaCompleja"
+          class="com.educacionit.ejemplosbean.tres.PersonaCompleja">
+        <constructor-arg value="101"></constructor-arg>
+        <constructor-arg value="Juan Cruz"></constructor-arg>
+        <constructor-arg ref="domicilio"></constructor-arg>
+    </bean>
+
+    <bean id="domicilio"
+          class="com.educacionit.ejemplosbean.tres.Domicilio">
+        <property name="direccion" value="Calle falsa 123"></property>
+    </bean>
+
+    <bean id="personaCollector"
+          class="com.educacionit.ejemplosbean.tres.PersonaColeccion">
+        <property name="id" value="201"></property>
+        <property name="nombre" value="Esteban Quito"></property>
+        <property name="domicilio">
+            <list>
+                <bean id="domLegal" class="com.educacionit.ejemplosbean.tres.Domicilio">
+                    <property name="direccion" value="Rincon 40"></property>
+                </bean>
+                <bean id="domParticular" class="com.educacionit.ejemplosbean.tres.Domicilio">
+                    <property name="direccion" value="hugues 1832"></property>
+                </bean>
+                <ref bean="domicilio"></ref>
+            </list>
+        </property>
+    </bean>
+
+</beans>
