@@ -1,6 +1,7 @@
 package com.educacionit.config;
 
 import com.educacionit.model.Alumno;
+import com.educacionit.model.Empleado;
 import com.educacionit.service.AlumnoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +19,11 @@ public class AppConfig {
         return new Alumno();
     }
 
+
+    @Bean("empleado")
+    public Empleado getBeanEmpleado(){
+        return new Empleado();
+    }
     /*@Bean("service")
     public AlumnoService getAlumnoService(){
         return new AlumnoService();

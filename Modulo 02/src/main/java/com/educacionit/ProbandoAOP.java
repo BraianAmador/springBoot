@@ -22,14 +22,24 @@ public class ProbandoAOP {
         //crtl + alt + v
         EmpleadoService empleadoService = context.getBean("empleadoService", EmpleadoService.class);
 
-        service.businessLogic("Update de alumno");
-        System.out.println("-----------------------------");
-        empleadoService.businessLogic();
-        System.out.println("-----------------------------");
-        empleadoService.businessValidation();
-        System.out.println("-----------------------------");
-        System.out.println(service.businessGetting());
-        System.out.println("-----------------------------");
-        service.businessGetting("update alumno");
+        System.out.println("Alumno: " + service.getAlumno());
+//        service.businessLogic("Update de alumno");
+//        System.out.println("-----------------------------");
+//        empleadoService.businessLogic();
+//        System.out.println("-----------------------------");
+//        empleadoService.businessValidation();
+//        System.out.println("-----------------------------");
+//        System.out.println(service.businessGetting());
+//        System.out.println("-----------------------------");
+//        service.businessGetting("update alumno");
+
+//        try{
+//            empleadoService.ocurrioUnaException();
+//        }catch (Exception e) {
+//
+//        }
+
+        empleadoService.haciendoAlgo();
+
     }
 }
